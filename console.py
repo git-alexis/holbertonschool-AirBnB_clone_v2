@@ -126,16 +126,18 @@ class HBNBCommand(cmd.Cmd):
 
         new_instance = HBNBCommand.classes[arguments[0]]()
 
-        for param in arguments[1:]:
-            key, value = param.split("=")
-            if value[0] == '"':  # string
-                value = value.strip('"').replace('_', ' ').replace('"', '\\"')
-            elif '.' in value:  # float
-                value = float(value)
-            else:  # integer
-                value = int(value)
+        if len(arguments) > 1:
+            for param in arguments[1:]:
+                key, value = param.split("=")
+                if value[0] == '"':  # string
+                    value = value.strip('"')
+                    value = value.replace('_', ' ').replace('"', '\\"')
+                elif '.' in value:  # float
+                    value = float(value)
+                else:  # integer
+                    value = int(value)
 
-            setattr(new_instance, key, value)
+                setattr(new_instance, key, value)
 
         print(new_instance.id)
         new_instance.save()
@@ -337,4 +339,5 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == "__main__":
+    """ executes the console only if was called as a program"""
     HBNBCommand().cmdloop()
