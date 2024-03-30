@@ -19,10 +19,10 @@ class DBStorage():
 			getenv('HBNB_MYSQL_USER'),
 			getenv('HBNB_MYSQL_PWD'),
 			getenv('HBNB_MYSQL_HOST'),
-			getenv('HBNB_MYSQL_DB'), 
+			getenv('HBNB_MYSQL_DB'),
 			pool_pre_ping=True
 		))
-		
+
 		if gentenv('HBNB_ENV') == 'test':
 			Base.metadata.drop_all(self.__engine)
 
