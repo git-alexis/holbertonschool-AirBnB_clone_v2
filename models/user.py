@@ -5,7 +5,7 @@ from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.orm import relationship
 from os import getenv
 
-class User(BaseModel):
+class User(BaseModel, Base):
 	"""This class defines a user by various attributes"""
 	if getenv('HBNB_TYPE_STORAGE') == 'db':
 		__tablename__ = 'users'
@@ -14,6 +14,7 @@ class User(BaseModel):
 		first_name = Column(String(128), nullable=True)
 		last_name = Column(String(128), nullable=True)
 		place = relationship("Place", backref="user", cascade="all, delete")
+		review = relationship("Review", backref="user", cascade="all, delete")
 	else:
 		email = ''
 		password = ''
