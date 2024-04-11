@@ -35,8 +35,8 @@ def python_and_text(text):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number_and_n(n):
-    """Returns a string when the route /c/ and a text is hit"""
-    return 'number {}'.format(n)
+    """Returns a string when the route /number/ and a number is hit"""
+    return '{} is a number'.format(n)
 
 
 if __name__ == '__main__':
