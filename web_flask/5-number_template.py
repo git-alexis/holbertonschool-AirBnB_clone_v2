@@ -41,7 +41,10 @@ def number_and_n(n):
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def number_template_and_n(n):
-    """Display a HTML page when the route /number_template/ and an integer is hit"""
+    """
+    Display a HTML page when the route /number_template/
+    and an integer is hit
+    """
     return render_template('5-number.html', n=n)
 
 
