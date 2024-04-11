@@ -12,7 +12,7 @@ def hello_hbnb():
 
 
 @app.route('/hbnb', strict_slashes=False)
-def hello_hbnb():
+def hbnb():
     """This function returns a string when the route / is hit"""
     return 'HBNB'
 
