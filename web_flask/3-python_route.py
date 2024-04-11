@@ -24,11 +24,11 @@ def c_and_text(text):
 
 
 @app.route('/python/<text>', strict_slashes=False)
-@app.route('/python/', defaults={'text':'is cool'}, strict_slashes=False)
+@app.route('/python/', defaults={'text': 'is cool'}, strict_slashes=False)
 def python_and_text(text):
     """
-    Returns a string when the route /python/ and a text
-    or a default value ('is cool') is hit
+    Returns a string or a default value ('is cool')
+    when the route /python/ and a text or nothing is hit
     """
     return 'python {}'.format(text.replace('_', ' '))
 
