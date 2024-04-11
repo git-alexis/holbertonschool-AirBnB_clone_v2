@@ -31,7 +31,7 @@ def python_and_text(text):
     when the route /python/ and a text or nothing is hit
     """
     text = text.replace('_', ' ')
-    return 'python {}'.format(text)
+    return 'Python {}'.format(text)
 
 
 if __name__ == '__main__':
