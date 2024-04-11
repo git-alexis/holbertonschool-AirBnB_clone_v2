@@ -30,8 +30,7 @@ def python_and_text(text):
     Returns a string or a default value ('is cool')
     when the route /python/ and a text or nothing is hit
     """
-    text = text.replace('_', ' ')
-    return 'Python {}'.format(text)
+    return 'Python {}'.format(text.replace('_', ' '))
 
 
 if __name__ == '__main__':
