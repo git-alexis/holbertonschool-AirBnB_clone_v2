@@ -5,7 +5,7 @@ from sqlalchemy import Column, String, ForeignKey
 from sqlalchemy.orm import relationship
 from models.city import City
 import models
-from models.base_model import BaseModel,Base
+from models.base_model import BaseModel, Base
 
 
 class State(BaseModel, Base):
@@ -20,11 +20,11 @@ class State(BaseModel, Base):
     else:
         name = ""
 
-@property
-def cities(self):
-    """getter attribute cities that returns the list of City instances"""
-    cities_list = []
-    for city in models.storage.all(City).values():
-        if city.state_id == self.id:
-            cities_list.append(city)
-    return cities_list
+    @property
+    def cities(self):
+        """getter attribute cities that returns the list of City instances"""
+        cities_list = []
+        for city in models.storage.all(City).values():
+            if city.state_id == self.id:
+                cities_list.append(city)
+        return cities_list

@@ -8,6 +8,7 @@ from models.city import City
 from models.user import User
 from models.place import Place
 
+
 class DBStorage():
     """ Class to manage storage of hbnb models in MySQL database """
     __engine = None
